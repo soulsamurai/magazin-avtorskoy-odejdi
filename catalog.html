@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог — ATELIER</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Шапка -->
+  <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-sm z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="index.html" class="flex items-center gap-2">
+          <svg class="w-8 h-8 text-emerald-700" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          <span class="text-xl md:text-2xl font-bold tracking-tight text-gray-900">ATELIER</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link text-sm font-medium text-gray-600 hover:text-emerald-700 transition-colors">Главная</a>
+          <a href="catalog.html" class="nav-link text-sm font-medium text-gray-600 hover:text-emerald-700 transition-colors">Каталог</a>
+          <a href="about.html" class="nav-link text-sm font-medium text-gray-600 hover:text-emerald-700 transition-colors">О нас</a>
+          <a href="contacts.html" class="nav-link text-sm font-medium text-gray-600 hover:text-emerald-700 transition-colors">Контакты</a>
+          <a href="cart.html" class="nav-link relative text-gray-600 hover:text-emerald-700 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/>
+            </svg>
+            <span class="cart-counter absolute -top-2 -right-2 bg-emerald-700 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold" style="display:none;">0</span>
+          </a>
+        </nav>
+        <div class="flex items-center gap-4 md:hidden">
+          <a href="cart.html" class="relative text-gray-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/>
+            </svg>
+            <span class="cart-counter absolute -top-2 -right-2 bg-emerald-700 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold" style="display:none;">0</span>
+          </a>
+          <button id="mobile-menu-btn" class="text-gray-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-gray-100">
+        <nav class="flex flex-col gap-2 pt-3">
+          <a href="index.html" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:bg-emerald-50 hover:text-emerald-700">Главная</a>
+          <a href="catalog.html" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:bg-emerald-50 hover:text-emerald-700">Каталог</a>
+          <a href="about.html" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:bg-emerald-50 hover:text-emerald-700">О нас</a>
+          <a href="contacts.html" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:bg-emerald-50 hover:text-emerald-700">Контакты</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Заголовок страницы -->
+  <section class="pt-28 md:pt-32 pb-8 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Каталог</h1>
+      <p class="text-gray-500 text-lg">Вся коллекция авторской одежды — <span id="product-count">25</span> моделей</p>
+    </div>
+  </section>
+
+  <!-- Фильтры и сортировка -->
+  <section class="bg-white border-b border-gray-100 sticky top-16 md:top-20 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <!-- Фильтры по категориям -->
+        <div class="flex flex-wrap gap-2" id="filters">
+          <button class="filter-btn active px-4 py-2 rounded-full border border-gray-300 text-sm font-medium transition-colors" data-category="all">
+            Все
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 text-sm font-medium transition-colors" data-category="hoodie">
+            Худи
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 text-sm font-medium transition-colors" data-category="tshirt">
+            Футболки
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 text-sm font-medium transition-colors" data-category="dress">
+            Платья
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 text-sm font-medium transition-colors" data-category="bag">
+            Сумки
+          </button>
+        </div>
+        <!-- Сортировка -->
+        <div class="flex items-center gap-2">
+          <label class="text-sm text-gray-500">Сортировка:</label>
+          <select id="sort-select" class="border border-gray-300 rounded-lg px-3 py-2 text-sm outline-none focus:border-emerald-700 bg-white">
+            <option value="default">По умолчанию</option>
+            <option value="price-asc">Цена: по возрастанию</option>
+            <option value="price-desc">Цена: по убыванию</option>
+            <option value="name-asc">Название: А–Я</option>
+            <option value="name-desc">Название: Я–А</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Сетка товаров -->
+  <section class="py-8 md:py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div id="catalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Заполняется через JS -->
+      </div>
+      <!-- Сообщение если нет товаров -->
+      <div id="no-results" class="hidden text-center py-16">
+        <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <p class="text-gray-400 text-lg">Товары не найдены</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="bg-gray-900 text-gray-400 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center text-sm">
+      <p>&copy; 2024 ATELIER. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- Скрипты -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Состояние каталога
+    let currentCategory = "all";
+    let currentSort = "default";
+
+    const catalogGrid = document.getElementById("catalog-grid");
+    const noResults = document.getElementById("no-results");
+    const productCount = document.getElementById("product-count");
+
+    // Отрисовка каталога
+    function renderCatalog() {
+      // Фильтрация
+      let filtered = currentCategory === "all"
+        ? [...PRODUCTS]
+        : PRODUCTS.filter(p => p.category === currentCategory);
+
+      // Сортировка
+      switch (currentSort) {
+        case "price-asc":
+          filtered.sort((a, b) => a.price - b.price);
+          break;
+        case "price-desc":
+          filtered.sort((a, b) => b.price - a.price);
+          break;
+        case "name-asc":
+          filtered.sort((a, b) => a.name.localeCompare(b.name, "ru"));
+          break;
+        case "name-desc":
+          filtered.sort((a, b) => b.name.localeCompare(a.name, "ru"));
+          break;
+      }
+
+      // Очистка и отрисовка
+      catalogGrid.innerHTML = "";
+      productCount.textContent = filtered.length;
+
+      if (filtered.length === 0) {
+        noResults.classList.remove("hidden");
+      } else {
+        noResults.classList.add("hidden");
+        filtered.forEach(product => {
+          catalogGrid.appendChild(createProductCard(product));
+        });
+      }
+    }
+
+    // Обработчики фильтров
+    document.getElementById("filters").addEventListener("click", (e) => {
+      const btn = e.target.closest(".filter-btn");
+      if (!btn) return;
+
+      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      currentCategory = btn.dataset.category;
+      renderCatalog();
+    });
+
+    // Обработчик сортировки
+    document.getElementById("sort-select").addEventListener("change", (e) => {
+      currentSort = e.target.value;
+      renderCatalog();
+    });
+
+    // Проверка хэша URL для предустановки фильтра
+    document.addEventListener("DOMContentLoaded", () => {
+      const hash = window.location.hash.replace("#", "");
+      if (hash && ["hoodie", "tshirt", "dress", "bag"].includes(hash)) {
+        currentCategory = hash;
+        document.querySelectorAll(".filter-btn").forEach(b => {
+          b.classList.toggle("active", b.dataset.category === hash);
+        });
+      }
+      renderCatalog();
+    });
+  </script>
+</body>
+</html>

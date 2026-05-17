@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATELIER — Авторская одежда</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Шапка -->
+  <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-sm z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <!-- Логотип -->
+        <a href="index.html" class="flex items-center gap-2">
+          <svg class="w-8 h-8 text-emerald-700" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          <span class="text-xl md:text-2xl font-bold tracking-tight text-gray-900">ATELIER</span>
+        </a>
+
+        <!-- Навигация десктоп -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link text-sm font-medium text-gray-600 hover:text-emerald-700 transition-colors">Главная</a>
+          <a href="catalog.html" class="nav-link text-sm font-medium text-gray-600 hover:text-emerald-700 transition-colors">Каталог</a>
+          <a href="about.html" class="nav-link text-sm font-medium text-gray-600 hover:text-emerald-700 transition-colors">О нас</a>
+          <a href="contacts.html" class="nav-link text-sm font-medium text-gray-600 hover:text-emerald-700 transition-colors">Контакты</a>
+          <a href="cart.html" class="nav-link relative text-gray-600 hover:text-emerald-700 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/>
+            </svg>
+            <span class="cart-counter absolute -top-2 -right-2 bg-emerald-700 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold" style="display:none;">0</span>
+          </a>
+        </nav>
+
+        <!-- Мобильное меню кнопка -->
+        <div class="flex items-center gap-4 md:hidden">
+          <a href="cart.html" class="relative text-gray-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/>
+            </svg>
+            <span class="cart-counter absolute -top-2 -right-2 bg-emerald-700 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold" style="display:none;">0</span>
+          </a>
+          <button id="mobile-menu-btn" class="text-gray-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Мобильное меню -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-gray-100">
+        <nav class="flex flex-col gap-2 pt-3">
+          <a href="index.html" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">Главная</a>
+          <a href="catalog.html" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">Каталог</a>
+          <a href="about.html" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">О нас</a>
+          <a href="contacts.html" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">Контакты</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero-секция -->
+  <section class="hero-section" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1600&h=900&fit=crop')">
+    <div class="relative z-10 text-center text-white px-4 max-w-4xl">
+      <p class="text-sm md:text-base uppercase tracking-[0.3em] mb-4 animate-fade-in-up">Авторская одежда из Москвы</p>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in-up animate-delay-200">
+        Каждая вещь —<br>история, рассказанная тканью
+      </h1>
+      <p class="text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto animate-fade-in-up animate-delay-400">
+        Создаём одежду, в которой чувствуется рука мастера. Ограниченные тиражи, натуральные материалы, вневременной дизайн.
+      </p>
+      <a href="catalog.html"
+         class="inline-block bg-emerald-700 hover:bg-emerald-800 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors animate-fade-in-up animate-delay-600">
+        Смотреть коллекцию
+      </a>
+    </div>
+  </section>
+
+  <!-- О бренде — краткий блок -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-3 gap-12 text-center">
+        <div class="reveal">
+          <div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Ручная работа</h3>
+          <p class="text-gray-500">Каждое изделие создаётся вручную в нашей московской мастерской с вниманием к каждому шву.</p>
+        </div>
+        <div class="reveal">
+          <div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Экологичность</h3>
+          <p class="text-gray-500">Используем только натуральные ткани и экологичные красители, заботясь о планете.</p>
+        </div>
+        <div class="reveal">
+          <div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Уникальность</h3>
+          <p class="text-gray-500">Ограниченные тиражи гарантируют, что ваша вещь будет особенной и неповторимой.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Популярные товары -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Популярные модели</h2>
+        <p class="text-gray-500 text-lg">Бестселлеры нашей коллекции, которые выбирают чаще всего</p>
+      </div>
+      <div id="popular-products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <!-- Заполняется через JS -->
+      </div>
+      <div class="text-center mt-12">
+        <a href="catalog.html"
+           class="inline-block border-2 border-emerald-700 text-emerald-700 hover:bg-emerald-700 hover:text-white font-semibold px-8 py-3 rounded-lg transition-colors">
+          Весь каталог →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Баннер -->
+  <section class="relative py-24 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&h=600&fit=crop')">
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative z-10 max-w-3xl mx-auto text-center text-white px-4">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Одежда, которая говорит за вас</h2>
+      <p class="text-lg text-white/80 mb-6">Подпишитесь на нашу рассылку и получите скидку 10% на первый заказ</p>
+      <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="email" placeholder="Ваш email" class="flex-1 px-4 py-3 rounded-lg text-gray-900 outline-none">
+        <button class="bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-3 rounded-lg font-semibold transition-colors whitespace-nowrap">Подписаться</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="bg-gray-900 text-gray-400 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <!-- Бренд -->
+        <div class="md:col-span-1">
+          <a href="index.html" class="flex items-center gap-2 mb-4">
+            <svg class="w-7 h-7 text-emerald-500" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            <span class="text-xl font-bold text-white">ATELIER</span>
+          </a>
+          <p class="text-sm leading-relaxed">Авторская одежда из натуральных материалов. Каждая вещь создаётся вручную в нашей московской мастерской.</p>
+        </div>
+        <!-- Навигация -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Магазин</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="catalog.html" class="hover:text-emerald-400 transition-colors">Каталог</a></li>
+            <li><a href="catalog.html#hoodie" class="hover:text-emerald-400 transition-colors">Худи</a></li>
+            <li><a href="catalog.html#tshirt" class="hover:text-emerald-400 transition-colors">Футболки</a></li>
+            <li><a href="catalog.html#dress" class="hover:text-emerald-400 transition-colors">Платья</a></li>
+            <li><a href="catalog.html#bag" class="hover:text-emerald-400 transition-colors">Аксессуары</a></li>
+          </ul>
+        </div>
+        <!-- Компания -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Компания</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="about.html" class="hover:text-emerald-400 transition-colors">О нас</a></li>
+            <li><a href="contacts.html" class="hover:text-emerald-400 transition-colors">Контакты</a></li>
+            <li><a href="#" class="hover:text-emerald-400 transition-colors">Доставка и оплата</a></li>
+            <li><a href="#" class="hover:text-emerald-400 transition-colors">Возврат</a></li>
+          </ul>
+        </div>
+        <!-- Контакты -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Контакты</h4>
+          <ul class="space-y-2 text-sm">
+            <li>+7 (495) 123-45-67</li>
+            <li>info@atelier-store.ru</li>
+            <li>г. Москва, ул. Большая Дмитровка, д. 15</li>
+          </ul>
+          <!-- Соцсети -->
+          <div class="flex gap-3 mt-4">
+            <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-emerald-700 rounded-lg flex items-center justify-center transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-emerald-700 rounded-lg flex items-center justify-center transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-emerald-700 rounded-lg flex items-center justify-center transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 text-center text-sm">
+        <p>&copy; 2024 ATELIER. Все права защищены. Авторская одежда ручной работы.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Скрипты -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Отрисовка популярных товаров (6 штук из разных категорий)
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.getElementById("popular-products");
+      const popularIds = [1, 7, 14, 20, 2, 9]; // по одному из каждой категории + ещё 2
+      const popularProducts = popularIds.map(id => PRODUCTS.find(p => p.id === id)).filter(Boolean);
+
+      popularProducts.forEach(product => {
+        container.appendChild(createProductCard(product));
+      });
+
+      // Анимация появления при скролле
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>

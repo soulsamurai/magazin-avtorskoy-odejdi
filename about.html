@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О нас — ATELIER</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Шапка -->
+  <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-sm z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="index.html" class="flex items-center gap-2">
+          <svg class="w-8 h-8 text-emerald-700" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          <span class="text-xl md:text-2xl font-bold tracking-tight text-gray-900">ATELIER</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link text-sm font-medium text-gray-600 hover:text-emerald-700 transition-colors">Главная</a>
+          <a href="catalog.html" class="nav-link text-sm font-medium text-gray-600 hover:text-emerald-700 transition-colors">Каталог</a>
+          <a href="about.html" class="nav-link text-sm font-medium text-gray-600 hover:text-emerald-700 transition-colors">О нас</a>
+          <a href="contacts.html" class="nav-link text-sm font-medium text-gray-600 hover:text-emerald-700 transition-colors">Контакты</a>
+          <a href="cart.html" class="nav-link relative text-gray-600 hover:text-emerald-700 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/>
+            </svg>
+            <span class="cart-counter absolute -top-2 -right-2 bg-emerald-700 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold" style="display:none;">0</span>
+          </a>
+        </nav>
+        <div class="flex items-center gap-4 md:hidden">
+          <a href="cart.html" class="relative text-gray-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/>
+            </svg>
+            <span class="cart-counter absolute -top-2 -right-2 bg-emerald-700 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold" style="display:none;">0</span>
+          </a>
+          <button id="mobile-menu-btn" class="text-gray-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-gray-100">
+        <nav class="flex flex-col gap-2 pt-3">
+          <a href="index.html" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:bg-emerald-50 hover:text-emerald-700">Главная</a>
+          <a href="catalog.html" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:bg-emerald-50 hover:text-emerald-700">Каталог</a>
+          <a href="about.html" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:bg-emerald-50 hover:text-emerald-700">О нас</a>
+          <a href="contacts.html" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:bg-emerald-50 hover:text-emerald-700">Контакты</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero О нас -->
+  <section class="relative pt-20 md:pt-24">
+    <div class="h-64 md:h-80 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1558171813-4c088753af8f?w=1600&h=400&fit=crop')">
+      <div class="absolute inset-0 bg-black/40 flex items-center justify-center" style="position:relative; height:100%;">
+        <h1 class="text-4xl md:text-5xl font-bold text-white">О нас</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- История бренда -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <!-- Текст -->
+        <div>
+          <p class="text-emerald-700 text-sm font-semibold uppercase tracking-wider mb-3">Наша история</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Одежда как искусство, а не просто вещь</h2>
+          <div class="space-y-4 text-gray-600 leading-relaxed">
+            <p>
+              ATELIER родился в 2019 году из простой идеи: одежда может быть не просто функциональной — она может
+              рассказывать историю. Наш основатель, дизайнер Анна Верёвкина, начала с небольшой мастерской на Чистых прудах,
+              где вручную создавала первые худи с авторскими принтами для друзей.
+            </p>
+            <p>
+              Сегодня ATELIER — это команда из 12 человек: дизайнеров, художников и мастеров, объединённых любовью к
+              ручной работе и натуральным материалам. Мы верим, что массовое производство лишает одежду души, поэтому
+              каждую вещь создаём ограниченным тиражом — от 20 до 100 экземпляров.
+            </p>
+            <p>
+              Наши принты рисуют живые художники. Наши ткани — это органический хлопок, лён и шёлк от проверенных
+              поставщиков. Наши красители — экологичные и безопасные. Мы не гонимся за трендами — мы создаём вещи,
+              которые будут актуальны через годы.
+            </p>
+          </div>
+        </div>
+        <!-- Фото основателя -->
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=600&h=700&fit=crop"
+               alt="Основатель ATELIER"
+               class="rounded-2xl shadow-lg w-full object-cover aspect-[4/5]"
+               onerror="this.src='https://via.placeholder.com/600x700/e5e7eb/9ca3af?text=Основатель'">
+          <div class="absolute -bottom-4 -left-4 bg-emerald-700 text-white px-6 py-3 rounded-xl shadow-lg">
+            <p class="font-semibold">Анна Верёвкина</p>
+            <p class="text-emerald-200 text-sm">Основатель и дизайнер</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Философия -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-16">
+        <p class="text-emerald-700 text-sm font-semibold uppercase tracking-wider mb-3">Философия</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Что делает нас особенными</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-emerald-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Авторский дизайн</h3>
+          <p class="text-gray-500 text-sm">Каждый принт и паттерн создаётся нашими художниками — никаких стоковых изображений и шаблонов.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-emerald-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Экоматериалы</h3>
+          <p class="text-gray-500 text-sm">Органический хлопок, лён, переработанные ткани. Мы заботимся о планете в каждом изделии.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-emerald-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Лимитированность</h3>
+          <p class="text-gray-500 text-sm">Каждая модель выпускается тиражом от 20 до 100 штук. Ваша вещь будет по-настоящему особенной.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-emerald-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Ручная работа</h3>
+          <p class="text-gray-500 text-sm">От раскроя до финишной обработки — каждый этап выполняется вручную нашими мастерами.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Команда -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-16">
+        <p class="text-emerald-700 text-sm font-semibold uppercase tracking-wider mb-3">Команда</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Люди, которые создают ATELIER</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div class="text-center">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&crop=face"
+               alt="Анна Верёвкина"
+               class="w-40 h-40 rounded-full mx-auto mb-4 object-cover shadow-md"
+               onerror="this.src='https://via.placeholder.com/300x300/e5e7eb/9ca3af?text=A'">
+          <h3 class="font-semibold text-lg">Анна Верёвкина</h3>
+          <p class="text-emerald-700 text-sm">Основатель и дизайнер</p>
+        </div>
+        <div class="text-center">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
+               alt="Дмитрий Холин"
+               class="w-40 h-40 rounded-full mx-auto mb-4 object-cover shadow-md"
+               onerror="this.src='https://via.placeholder.com/300x300/e5e7eb/9ca3af?text=Д'">
+          <h3 class="font-semibold text-lg">Дмитрий Холин</h3>
+          <p class="text-emerald-700 text-sm">Художник-иллюстратор</p>
+        </div>
+        <div class="text-center">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face"
+               alt="Мария Светлова"
+               class="w-40 h-40 rounded-full mx-auto mb-4 object-cover shadow-md"
+               onerror="this.src='https://via.placeholder.com/300x300/e5e7eb/9ca3af?text=М'">
+          <h3 class="font-semibold text-lg">Мария Светлова</h3>
+          <p class="text-emerald-700 text-sm">Главный портной</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Цифры -->
+  <section class="py-16 bg-emerald-700 text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-4xl md:text-5xl font-bold mb-1">5+</p>
+          <p class="text-emerald-200 text-sm">Лет на рынке</p>
+        </div>
+        <div>
+          <p class="text-4xl md:text-5xl font-bold mb-1">3000+</p>
+          <p class="text-emerald-200 text-sm">Довольных клиентов</p>
+        </div>
+        <div>
+          <p class="text-4xl md:text-5xl font-bold mb-1">200+</p>
+          <p class="text-emerald-200 text-sm">Уникальных моделей</p>
+        </div>
+        <div>
+          <p class="text-4xl md:text-5xl font-bold mb-1">12</p>
+          <p class="text-emerald-200 text-sm">Человек в команде</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="bg-gray-900 text-gray-400 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center text-sm">
+      <p>&copy; 2024 ATELIER. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- Скрипты -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
